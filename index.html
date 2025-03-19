@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuscribiteYa - Monetiza Tus Grupos VIP en Telegram</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background: #f9f9f9;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        h1, h2, h3 {
+            color: #ff6f61;
+        }
+
+        span {
+            color: #ff6f61;
+        }
+
+        a {
+            color: #ff6f61;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ff6f61, #ff4a3d);
+            color: #fff;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            background: #fff;
+            color: #ff6f61;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #ff4a3d;
+            color: #fff;
+        }
+
+        /* Beneficios Section */
+        .beneficios {
+            background: #fff;
+            padding: 80px 0;
+        }
+
+        .beneficios h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .beneficios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .beneficio-card {
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .beneficio-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Nueva Sección: Cómo SuscribiteYa Te Facilita la Vida */
+        .facilita {
+            background: #fff;
+            padding: 80px 0;
+        }
+
+        .facilita h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .facilita-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .facilita-card {
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .facilita-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .facilita-icono {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .facilita-card h3 {
+            margin: 10px 0;
+            font-size: 1.3rem;
+            color: #ff6f61;
+        }
+
+        .facilita-card p {
+            margin: 0;
+            color: #666;
+        }
+
+        /* Cómo Funciona Section */
+        .como-funciona {
+            background: #f9f9f9;
+            padding: 80px 0;
+        }
+
+        .como-funciona h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .pasos-lista {
+            list-style: none;
+            padding: 0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .pasos-lista li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .paso-numero {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ff6f61;
+            margin-right: 20px;
+            min-width: 50px;
+            text-align: center;
+        }
+
+        .paso-contenido h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+
+        .paso-contenido p {
+            margin: 5px 0 0;
+            color: #666;
+        }
+
+        /* Testimonios Section */
+        .testimonios {
+            background: #fff;
+            padding: 80px 0;
+        }
+
+        .testimonios h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .testimonios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .testimonio-card {
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .testimonio-card .autor {
+            font-style: italic;
+            color: #777;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, #ff6f61, #ff4a3d);
+            color: #fff;
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .cta h2 {
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta p {
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: #ff6f61;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1>Monetiza Tus Grupos VIP en Telegram con <span>SuscribiteYa</span></h1>
+            <p>Automatiza la gestión de suscripciones, pagos y accesos. Enfócate en crear, nosotros nos encargamos del resto.</p>
+            <a href="#cta" class="cta-button">¡Empieza Ahora Gratis!</a>
+        </div>
+    </header>
+
+    <!-- Beneficios Section -->
+    <section id="beneficios" class="beneficios">
+        <div class="container">
+            <h2>¿Por Qué Elegir <span>SuscribiteYa</span>?</h2>
+            <div class="beneficios-grid">
+                <div class="beneficio-card">
+                    <h3>🚀 Automatización Total</h3>
+                    <p>Genera links de pago, gestiona accesos y expulsa morosos automáticamente.</p>
+                </div>
+                <div class="beneficio-card">
+                    <h3>💸 Solo el 4% de Comisión</h3>
+                    <p>Paga solo una pequeña parte de tus ingresos. ¡Sin costos ocultos!</p>
+                </div>
+                <div class="beneficio-card">
+                    <h3>🔒 Privacidad Garantizada</h3>
+                    <p>Tus datos y contenido están seguros. No compartimos tu información.</p>
+                </div>
+                <div class="beneficio-card">
+                    <h3>💡 Enfócate en Crear</h3>
+                    <p>Olvídate de la gestión técnica. Nosotros lo hacemos por ti.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nueva Sección: Cómo SuscribiteYa Te Facilita la Vida -->
+    <section id="facilita" class="facilita">
+        <div class="container">
+            <h2>¿Cómo <span>SuscribiteYa</span> Te Facilita la Vida?</h2>
+            <div class="facilita-grid">
+                <div class="facilita-card">
+                    <div class="facilita-icono">💳</div>
+                    <h3>Gestión Automática de Pagos</h3>
+                    <p>Genera links de pago únicos para cada suscriptor. Recibe pagos automáticamente sin preocuparte por cobros manuales.</p>
+                </div>
+                <div class="facilita-card">
+                    <div class="facilita-icono">🤖</div>
+                    <h3>Acceso Automático al Contenido</h3>
+                    <p>Al confirmarse el pago, los suscriptores son agregados automáticamente a tu grupo VIP. Sin intervención manual.</p>
+                </div>
+                <div class="facilita-card">
+                    <div class="facilita-icono">⏰</div>
+                    <h3>Expulsión de Morosos</h3>
+                    <p>Si un suscriptor no paga, es expulsado automáticamente. No pierdes tiempo gestionando accesos.</p>
+                </div>
+                <div class="facilita-card">
+                    <div class="facilita-icono">📊</div>
+                    <h3>Estadísticas en Tiempo Real</h3>
+                    <p>Accede a un panel de control con métricas de tus ingresos, suscriptores y más. Todo en un solo lugar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cómo Funciona Section -->
+    <section id="como-funciona" class="como-funciona">
+        <div class="container">
+            <h2>¿Cómo Funciona <span>SuscribiteYa</span>?</h2>
+            <ul class="pasos-lista">
+                <li>
+                    <span class="paso-numero">1</span>
+                    <div class="paso-contenido">
+                        <h3>Regístrate en 2 Minutos</h3>
+                        <p>Solo necesitas un correo y un nombre. ¡Sin complicaciones!</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="paso-numero">2</span>
+                    <div class="paso-contenido">
+                        <h3>Configura Tu Grupo VIP</h3>
+                        <p>Te guiamos paso a paso para que todo quede listo.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="paso-numero">3</span>
+                    <div class="paso-contenido">
+                        <h3>Comparte Tu Link de Pago</h3>
+                        <p>Empieza a recibir suscriptores y ganar dinero al instante.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Testimonios Section -->
+    <section id="testimonios" class="testimonios">
+        <div class="container">
+            <h2>💬 Lo Que Dicen Nuestras Creadoras</h2>
+            <div class="testimonios-grid">
+                <div class="testimonio-card">
+                    <p>"Antes perdía horas gestionando pagos y accesos. Ahora todo es automático y gano más."</p>
+                    <p class="autor">— María, 24 años</p>
+                </div>
+                <div class="testimonio-card">
+                    <p>"Es súper seguro y fácil de usar. ¡Lo recomiendo a todas las creadoras!"</p>
+                    <p class="autor">— Ana, 27 años</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta" class="cta">
+        <div class="container">
+            <h2>🚀 ¡Únete a <span>SuscribiteYa</span> Hoy!</h2>
+            <p>Configuración gratuita para las primeras 50 creadoras. ¡No te quedes fuera!</p>
+            <a href="#cta" class="cta-button">¡Quiero Empezar Ahora!</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2024 SuscribiteYa · <a href="#">Términos</a> · <a href="#">Soporte 24/7</a></p>
+            <p>Diseñado para creadoras, por creadoras.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
